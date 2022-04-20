@@ -7,7 +7,7 @@ Student looking to get into backend development or devops.
 </p>
 <br>
 
-## Projects
+### Projects
 - [Todo API in Go](https://github.com/cam-wil/cams-todo-golang)
 - [Weather App in NodeJS](https://github.com/cam-wil/weather-app-website)
 - [Stock Worth API in Go](https://github.com/cam-wil/ticker-server-golang)
@@ -15,7 +15,7 @@ Student looking to get into backend development or devops.
 - [Leetcode in Go](https://github.com/cam-wil/leetcode-in-go)
 - [Programming Paradigms Projects (Mario from scratch) in Java](https://github.com/cam-wil/Programming-Paradigms)
 
-## Languages Used
+### Languages Used
 - JavaScript
 - TypeScript
 - Python3
@@ -24,7 +24,7 @@ Student looking to get into backend development or devops.
 - Java
 - C++
 
-## Technologies / Frameworks Used
+### Technologies / Frameworks Used
 - NodeJS
 - ExpressJS
 - JSON
@@ -37,6 +37,6 @@ Student looking to get into backend development or devops.
 - Swing
 - cheerio
 
-## Learning
+### Learning
 - Docker
 - Kubernetes 
