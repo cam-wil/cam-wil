@@ -14,3 +14,29 @@ Student looking to get into backend development or devops.
 - [Learn Go With Tests](https://github.com/cam-wil/learn-go-with-tests)
 - [Leetcode in Go](https://github.com/cam-wil/leetcode-in-go)
 - [Programming Paradigms Projects (Mario from scratch) in Java](https://github.com/cam-wil/Programming-Paradigms)
+
+## Languages Used
+- JavaScript
+- TypeScript
+- Python3
+- Go
+- SQL
+- Java
+- C++
+
+## Technologies / Frameworks Used
+- NodeJS
+- ExpressJS
+- JSON
+- Python Flask
+- WebSocket
+- BeautifulSoup
+- gorilla/mux
+- MySQL
+- Postgres
+- Swing
+- cheerio
+
+## Learning
+- Docker
+- Kubernetes 
