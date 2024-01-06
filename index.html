@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="dateRan">Last Updated: </p>
+    <label for="bridgeCheck">Ignore bridge closures, construction, and maintenance:</label>
+    <input type="checkbox" id="bridgeCheck" checked>
+    <button type="button" id="button" onclick="myFunction()">Refresh</button>
+
+    <table id="eventTable">
+        <tr>
+            <th>County</th>
+            <th>Type</th>
+            <th>Route</th>
+            <th>Route Type</th>
+            <th>Description</th>
+            <th>Reported By</th>
+
+        </tr>
+    </table>
+
+
+    <script>
+        async function doTheThing() {
+            var table = document.getElementById("eventTable");
+            const res = await fetch("https://layers.idrivearkansas.com/closures_points.geojson");
+            const json = await res.json();
+            const events = json.features;
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById('eventTable');
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+            }
+            console.log(events)
+            var checkStatus = document.getElementById("bridgeCheck");
+            var dateRan = document.getElementById("dateRan");
+            dateRan.innerHTML = "Last Ran: " + Date();
+            events.forEach((event) => {
+                if (checkStatus.checked === true && ((event.properties.reason === "closed_bridge" || event.properties.reason === "maintenance" || event.properties.reason === "construction"))) {
+                    return
+                } else {
+                    var row = table.insertRow(-1);
+
+                    var county = row.insertCell(0);
+                    var eventType = row.insertCell(1);
+                    var route = row.insertCell(2);
+                    var routeType = row.insertCell(3);
+                    var description = row.insertCell(4);
+                    var reported = row.insertCell(5);
+
+                    county.innerHTML = event.properties.county_name;
+                    eventType.innerHTML = event.properties.reason_name;
+                    route.innerHTML = event.properties.route_name || "";
+                    routeType.innerHTML = event.properties.route_type || "";
+                    description.innerHTML = event.properties.description;
+                    reported.innerHTML = event.properties.reported_by;
+                }
+            })
+            document.getElementById('button').style.visibility = 'hidden';
+        }
+
+        doTheThing()
+        setInterval(doTheThing, 30000)
+
+
+    </script>
+
+</body>
+
+</html>
